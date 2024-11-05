@@ -1,9 +1,16 @@
-#ifndef TIMER_H
-#define TIMER_H
+/**
+ * timer.h
+ * Created on Aug, 23th 2023
+ * Author: Tiago Barros
+ * Based on "From C to C++ course - 2002"
+*/
 
-void timerInit();       // Inicializa o temporizador
-void timerDestroy();    // Desaloca recursos do temporizador
-int timerTimeOver();    // Verifica se o tempo se esgotou
-void timerDelay(int seconds); // Pausa a execução por um determinado número de segundos
+void timerInit(int valueMilliSec);
 
-#endif
+void timerDestroy();
+
+void timerUpdateTimer(int valueMilliSec);
+
+int timerTimeOver();
+
+void timerPrint();
