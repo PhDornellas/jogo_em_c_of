@@ -7,20 +7,36 @@
 #include "timer.h"
 
 void mostrar_resultados(int vitoria, int derrota, int empate) {
-    printf("\n\n\nVocê teve um total de:\n%d VITÓRIAS\n%d DERROTAS\n%d EMPATES\n", vitoria, derrota, empate);
+    screenClear();
+
+    screenGotoxy(30, 13);
+    printf("Você teve um total de:");
+    screenGotoxy(30, 15);
+    printf("%d VITÓRIAS", vitoria);
+    screenGotoxy(30, 17);
+    printf("%d DERROTAS", derrota);
+    screenGotoxy(30, 19);
+    printf("%d EMPATE", empate);
+
+    screenGotoxy(30, 21);
     printf("Pressione ENTER para sair...");
-    getchar(); // Pausa para ver os resultados finais
-    getchar(); // Para capturar o enter do buffer
+    getchar();
+    getchar();
 }
 
 int escolha_opcao() {
-    printf("\n\n\nEscolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
+    screenClear();
+
+    screenGotoxy(30, 13);
+    printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
     int opcao;
     scanf("%d", &opcao);
     return opcao;
 }
 
 void verificacao_da_escolha(int opcao_user, int *n_empate, int *n_vitoria, int *n_derrota) {
+    screenClear();
+
     char escolha_user[20];
     char escolha_computador[20];
     int opcao_computador;
@@ -32,24 +48,24 @@ void verificacao_da_escolha(int opcao_user, int *n_empate, int *n_vitoria, int *
     strcpy(escolha_user, opcoes[opcao_user]);
     strcpy(escolha_computador, opcoes[opcao_computador]);
 
-    // Exibe o resultado da rodada antes de limpar a tela
+    screenGotoxy(30, 13);
     if (opcao_user == opcao_computador) {
-        printf("\n\n\nEMPATE! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
+        printf("EMPATE! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         (*n_empate)++;
     } else if ((opcao_user == 0 && opcao_computador == 2) || 
                (opcao_user == 1 && opcao_computador == 0) || 
                (opcao_user == 2 && opcao_computador == 1)) {
-        printf("\n\n\nParabéns, você GANHOU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
+        printf("Parabéns, você GANHOU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         (*n_vitoria)++;
     } else {
-        printf("\n\n\nVocê PERDEU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
+        printf("Você PERDEU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         (*n_derrota)++;
     }
 }
 
 int main() {
-    screenInit(1); 
-    keyboardInit(); 
+    screenInit(1);  
+    keyboardInit();
 
     int cont_empate = 0, cont_vitoria = 0, cont_derrota = 0;
     char opcao_sair;
@@ -58,23 +74,22 @@ int main() {
         int opcao_user = escolha_opcao();
         verificacao_da_escolha(opcao_user, &cont_empate, &cont_vitoria, &cont_derrota);
 
-        // Pausa antes de limpar a tela para ver o resultado
+        screenGotoxy(30, 15);
         printf("Pressione ENTER para continuar...");
-        getchar(); // Captura o enter do buffer anterior
-        getchar(); // Pausa até o usuário pressionar enter
+        getchar();
+        getchar();
 
-        screenClear(); // Limpa a tela apenas quando o usuário tiver visto o resultado
+        screenClear(); 
 
-        printf("\n\n\nDeseja continuar? Sim[S] Não[N]: ");
+        screenGotoxy(30, 13);
+        printf("Deseja continuar? Sim[S] Não[N]: ");
         scanf(" %c", &opcao_sair);
-        printf("Pressione ENTER para continuar...");
-        getchar(); 
 
     } while (opcao_sair == 'S' || opcao_sair == 's');
 
     mostrar_resultados(cont_vitoria, cont_derrota, cont_empate);
 
-    keyboardDestroy(); 
-    screenDestroy(); 
+    keyboardDestroy();
+    screenDestroy();
     return 0;
 }
