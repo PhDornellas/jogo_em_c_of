@@ -8,6 +8,7 @@
 
 void mostrar_resultados(int vitoria, int derrota, int empate) {
     screenClear();
+    screenInit(1);
 
     screenGotoxy(30, 13);
     printf("Você teve um total de:");
@@ -26,6 +27,7 @@ void mostrar_resultados(int vitoria, int derrota, int empate) {
 
 int escolha_opcao() {
     screenClear();
+    screenInit(1);
 
     screenGotoxy(30, 13);
     printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
@@ -36,6 +38,7 @@ int escolha_opcao() {
 
 void verificacao_da_escolha(int opcao_user, int *n_empate, int *n_vitoria, int *n_derrota) {
     screenClear();
+    screenInit(1);
 
     char escolha_user[20];
     char escolha_computador[20];
@@ -79,7 +82,8 @@ int main() {
         getchar();
         getchar();
 
-        screenClear(); 
+        screenClear();
+        screenInit(1);
 
         screenGotoxy(30, 13);
         printf("Deseja continuar? Sim[S] Não[N]: ");
