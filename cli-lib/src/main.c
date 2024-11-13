@@ -10,16 +10,16 @@ void mostrar_resultados(int vitoria, int derrota, int empate) {
     screenClear();
     screenInit(1);
 
-    screenGotoxy(30, 13);
+    screenGotoxy(22, 8);
     printf("Você teve um total de:");
-    screenGotoxy(30, 15);
+    screenGotoxy(22, 10);
     printf("%d VITÓRIAS", vitoria);
-    screenGotoxy(30, 17);
+    screenGotoxy(22, 12);
     printf("%d DERROTAS", derrota);
-    screenGotoxy(30, 19);
+    screenGotoxy(22, 14);
     printf("%d EMPATE", empate);
 
-    screenGotoxy(30, 21);
+    screenGotoxy(22, 16);
     printf("Pressione ENTER para sair...");
     getchar();
     getchar();
@@ -29,7 +29,7 @@ int escolha_opcao() {
     screenClear();
     screenInit(1);
 
-    screenGotoxy(30, 13);
+    screenGotoxy(22, 12);
     printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
     int opcao;
     scanf("%d", &opcao);
@@ -51,14 +51,14 @@ void verificacao_da_escolha(int opcao_user, int *n_empate, int *n_vitoria, int *
     strcpy(escolha_user, opcoes[opcao_user]);
     strcpy(escolha_computador, opcoes[opcao_computador]);
 
-    screenGotoxy(30, 13);
+    screenGotoxy(9, 10);
     if (opcao_user == opcao_computador) {
         printf("EMPATE! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         (*n_empate)++;
     } else if ((opcao_user == 0 && opcao_computador == 2) || 
                (opcao_user == 1 && opcao_computador == 0) || 
                (opcao_user == 2 && opcao_computador == 1)) {
-        printf("Parabéns, você GANHOU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
+        printf("Você GANHOU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         (*n_vitoria)++;
     } else {
         printf("Você PERDEU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
@@ -77,7 +77,7 @@ int main() {
         int opcao_user = escolha_opcao();
         verificacao_da_escolha(opcao_user, &cont_empate, &cont_vitoria, &cont_derrota);
 
-        screenGotoxy(30, 15);
+        screenGotoxy(22, 12);
         printf("Pressione ENTER para continuar...");
         getchar();
         getchar();
@@ -85,7 +85,7 @@ int main() {
         screenClear();
         screenInit(1);
 
-        screenGotoxy(30, 13);
+        screenGotoxy(22, 12);
         printf("Deseja continuar? Sim[S] Não[N]: ");
         scanf(" %c", &opcao_sair);
 
