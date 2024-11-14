@@ -11,10 +11,30 @@ int escolha_opcao() {
     screenClear();
     screenInit(1);
 
-    screenGotoxy(22, 12);
+    screenGotoxy(22, 5);
     printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
+    
+
+    screenGotoxy (3,8);
+    printf("   Pedra                Papel               Tesoura ");
+    screenGotoxy (3,9);
+    printf("   _____                ___________                    o     o");
+    screenGotoxy (3,10);
+    printf(" /                     |           |                       /");
+    screenGotoxy (3,11);
+    printf("|         |            |  ------   |                     /");
+    screenGotoxy (3,12);
+    printf(" ______/               |  ------   |                      X");
+    screenGotoxy (3,13);
+    printf("                       |  ------   |                     /  ");
+    screenGotoxy (3,14);
+    printf("                       |___________|                    /    ");
+
     int opcao;
     scanf("%d", &opcao);
+
+
+    
     return opcao;
 }
 
@@ -75,17 +95,16 @@ int main() {
     screenInit(1);
     keyboardInit();
 
-    screenGotoxy (3,8);
-    printf(" ____        _   _   _        __     __  _    _   _  __  __  _____  _  __ \n");
-    screenGotoxy (3,9);
-    printf("| __ )  __ _| |_| |_| | ___   \\ \\   / / | |  | | | | \\ \\/ / | ____|| |/ / \n");
-    screenGotoxy (3,10);
-    printf("|  _ \\ / _` | __| __| |/ _ \\   \\ \\ / /  | |  | | | |  \\  /  |  _|  | ' /  \n");
-    screenGotoxy(3,11);
-    printf("| |_) | (_| | |_| |_| |  __/    \\ V /   | |__| |_| |  /  \\  | |___ | . \\  \n");
-    screenGotoxy(3,12); ("|____/ \\__,_|\\__|\\__|_|\\___|     \\_/     \\____/(_)_| /_/\\_\\ |_____||_|\\_\\\n");
-    printf("                                                                          \n");
-    screenGotoxy(3,13);
+
+    screenGotoxy (20,3);
+    printf("| __ )  __ _| |_| |_| | ___    \n");
+    screenGotoxy (20,4);
+    printf("|  _ \\ / _` | __| __| |/ _ \\    \n");
+    screenGotoxy(20,5);
+    printf("| |_) | (_| | |_| |_| |  __/     \n");
+    screenGotoxy(20,6); 
+    printf("|____/ \\__,_|\\__|\\__|_|\\___    \n");                                                        
+    screenGotoxy(20,7);
     printf("\n");
 
 
