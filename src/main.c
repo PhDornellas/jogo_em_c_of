@@ -13,6 +13,72 @@ typedef struct {
     int empates;
 } Estatisticas;
 
+void logo_entrada(){
+
+    screenGotoxy(20, 2);
+    screenSetColor(WHITE,LIGHTBLUE);   
+    printf(" ___         _   _   _");
+    screenGotoxy(20, 3);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| __ )  __ _| |_| |_| | ___    \n");
+    screenGotoxy(20, 4);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("|  _ \\ / _` | __| __| |/ _ \\   \n");
+    screenGotoxy(20, 5);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |_) | (_| | |_| |_| |  __/   \n");
+    screenGotoxy(20, 6);
+    screenSetColor(WHITE,LIGHTBLUE); 
+    printf("|____/ \\__,_|\\__|\\__|_|\\___    \n");                                                        
+    
+
+    screenGotoxy(27, 8);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("    _     ___    \n");
+    screenGotoxy(27, 9);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("  / _ \\  |  __|  \n");
+    screenGotoxy(27, 10);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" | | | | | |_    \n");
+    screenGotoxy(27, 11);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" | | | | |  _|   \n");
+    screenGotoxy(27, 12);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" | |_| | | |     \n");
+    screenGotoxy(27, 13);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("  \\ _ /  |_|     \n");
+
+    screenGotoxy(20, 14);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" _      _   _   ____   _  __  _   _ \n");
+    screenGotoxy(20, 15);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |    | | | | / ___| | |/ / | | | |\n");
+    screenGotoxy(20, 16);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |    | | | || |     | ' /   \\   /\n");
+    screenGotoxy(20, 17);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |___ | |_| || |___  | . \\    | | \n");
+    screenGotoxy(20, 18);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("|_____| \\___/  \\____| |_|\\_\\   |_| \n");
+
+
+
+    screenGotoxy(45, 21);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("Bem-vindo ao BATTLE OF LUCK!\n\n");
+    screenGotoxy(45, 22);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("Pressione ENTER para continuar...");
+    getchar();
+
+}
+
 int escolha_opcao() {
     screenClear();
     screenInit(1);
@@ -110,50 +176,7 @@ int main() {
     stats->derrotas = 0;
     stats->empates = 0;
 
-    
-
-    screenGotoxy(20, 3);
-    printf("| __ )  __ _| |_| |_| | ___    \n");
-    screenGotoxy(20, 4);
-    printf("|  _ \\ / _` | __| __| |/ _ \\   \n");
-    screenGotoxy(20, 5);
-    printf("| |_) | (_| | |_| |_| |  __/   \n");
-    screenGotoxy(20, 6); 
-    printf("|____/ \\__,_|\\__|\\__|_|\\___    \n");                                                        
-    screenGotoxy(20, 7);
-    printf("\n");
-
-    screenGotoxy(27, 8);
-    printf("    _     ___    \n");
-    screenGotoxy(27, 9);
-    printf("  / _ \\  |  __|  \n");
-    screenGotoxy(27, 10);
-    printf(" | | | | | |_    \n");
-    screenGotoxy(27, 11);
-    printf(" | | | | |  _|   \n");
-    screenGotoxy(27, 12);
-    printf(" | |_| | | |     \n");
-    screenGotoxy(27, 13);
-    printf("  \\ _ /  |_|     \n");
-
-    screenGotoxy(20, 14);
-    printf(" _      _   _   ____   _  __  _   _ \n");
-    screenGotoxy(20, 15);
-    printf("| |    | | | | / ___| | |/ / | | | |\n");
-    screenGotoxy(20, 16);
-    printf("| |    | | | || |     | ' /   \\   /\n");
-    screenGotoxy(20, 17);
-    printf("| |___ | |_| || |___  | . \\    | | \n");
-    screenGotoxy(20, 18);
-    printf("|_____| \\___/  \\____| |_|\\_\\   |_| \n");
-
-
-
-    screenGotoxy(45, 21);
-    printf("Bem-vindo ao BATTLE OF LUCK!\n\n");
-    screenGotoxy(45, 22);
-    printf("Pressione ENTER para continuar...");
-    getchar();
+    logo_entrada();
 
     char opcao_sair;
     do {
