@@ -84,59 +84,62 @@ int escolha_opcao() {
     screenInit(1);
 
 
-    screenGotoxy(35, 8);
+    screenGotoxy(33, 8);
     screenSetColor(CYAN, WHITE);
-    printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
+    printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: \n");
+    screenGotoxy(27,10);
+    screenSetColor(DARKGRAY,WHITE);
+    printf("Digite sua escolha e pressione Enter para continuar:\n");
     
-    screenGotoxy(5, 2);
+    screenGotoxy(3, 2);
     screenSetColor(WHITE,LIGHTBLUE);   
     printf(" ___         _   _   _");
-    screenGotoxy(5, 3);
+    screenGotoxy(3, 3);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("| __ )  __ _| |_| |_| | ___    \n");
-    screenGotoxy(5, 4);
+    screenGotoxy(3, 4);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("|  _ \\ / _` | __| __| |/ _ \\   \n");
-    screenGotoxy(5, 5);
+    screenGotoxy(3, 5);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("| |_) | (_| | |_| |_| |  __/   \n");
-    screenGotoxy(5, 6);
+    screenGotoxy(3, 6);
     screenSetColor(WHITE,LIGHTBLUE); 
     printf("|____/ \\__,_|\\__|\\__|_|\\___    \n");                                                        
     
 
-    screenGotoxy(10, 7);
+    screenGotoxy(8, 7);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("    _     ___    \n");
-    screenGotoxy(10, 8);
+    screenGotoxy(8, 8);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("  / _ \\  |  __|  \n");
-    screenGotoxy(10, 9);
+    screenGotoxy(8, 9);
     screenSetColor(WHITE,LIGHTBLUE);
     printf(" | | | | | |_    \n");
-    screenGotoxy(10, 10);
+    screenGotoxy(8, 10);
     screenSetColor(WHITE,LIGHTBLUE);
     printf(" | | | | |  _|   \n");
-    screenGotoxy(10, 11);
+    screenGotoxy(8, 11);
     screenSetColor(WHITE,LIGHTBLUE);
     printf(" | |_| | | |     \n");
-    screenGotoxy(10, 12);
+    screenGotoxy(8, 12);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("  \\ _ /  |_|     \n");
 
-    screenGotoxy(5, 13);
+    screenGotoxy(3, 13);
     screenSetColor(WHITE,LIGHTBLUE);
     printf(" _      _   _   ____   _  __   \n");
-    screenGotoxy(5, 14);
+    screenGotoxy(3, 14);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("| |    | | | | / ___| | |/ / \n");
-    screenGotoxy(5, 15);
+    screenGotoxy(3, 15);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("| |    | | | || |     | ' /      \n");
-    screenGotoxy(5, 16);
+    screenGotoxy(3, 16);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("| |___ | |_| || |___  | . \\     \n");
-    screenGotoxy(5, 17);
+    screenGotoxy(3, 17);
     screenSetColor(WHITE,LIGHTBLUE);
     printf("|_____| \\___/  \\____| |_|\\_\\    \n");
 
