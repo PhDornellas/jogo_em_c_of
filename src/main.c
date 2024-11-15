@@ -53,27 +53,27 @@ void logo_entrada(){
 
     screenGotoxy(20, 14);
     screenSetColor(WHITE,LIGHTBLUE);
-    printf(" _      _   _   ____   _  __  _   _ \n");
+    printf(" _      _   _   ____   _  __   \n");
     screenGotoxy(20, 15);
     screenSetColor(WHITE,LIGHTBLUE);
-    printf("| |    | | | | / ___| | |/ / | | | |\n");
+    printf("| |    | | | | / ___| | |/ / \n");
     screenGotoxy(20, 16);
     screenSetColor(WHITE,LIGHTBLUE);
-    printf("| |    | | | || |     | ' /   \\   /\n");
+    printf("| |    | | | || |     | ' /      \n");
     screenGotoxy(20, 17);
     screenSetColor(WHITE,LIGHTBLUE);
-    printf("| |___ | |_| || |___  | . \\    | | \n");
+    printf("| |___ | |_| || |___  | . \\     \n");
     screenGotoxy(20, 18);
     screenSetColor(WHITE,LIGHTBLUE);
-    printf("|_____| \\___/  \\____| |_|\\_\\   |_| \n");
+    printf("|_____| \\___/  \\____| |_|\\_\\    \n");
 
 
 
     screenGotoxy(45, 21);
-    screenSetColor(WHITE,LIGHTBLUE);
+    screenSetColor(CYAN, WHITE);
     printf("Bem-vindo ao BATTLE OF LUCK!\n\n");
     screenGotoxy(45, 22);
-    screenSetColor(WHITE,LIGHTBLUE);
+    screenSetColor(CYAN,WHITE);
     printf("Pressione ENTER para continuar...");
     getchar();
 
@@ -84,24 +84,63 @@ int escolha_opcao() {
     screenInit(1);
 
 
-    screenGotoxy(22, 5);
+    screenGotoxy(35, 8);
+    screenSetColor(CYAN, WHITE);
     printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
     
-    screenGotoxy(3, 8);
-    printf("   Pedra                Papel               Tesoura ");
-    screenGotoxy(3, 9);
-    printf("   _____                ___________                    o     o");
-    screenGotoxy(3, 10);
-    printf(" /                     |           |                       /");
-    screenGotoxy(3, 11);
-    printf("|         |            |  ------   |                     /");
-    screenGotoxy(3, 12);
-    printf(" ______/               |  ------   |                      X");
-    screenGotoxy(3, 13);
-    printf("                       |  ------   |                     /  ");
-    screenGotoxy(3, 14);
-    printf("                       |___________|                    /    ");
+    screenGotoxy(5, 2);
+    screenSetColor(WHITE,LIGHTBLUE);   
+    printf(" ___         _   _   _");
+    screenGotoxy(5, 3);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| __ )  __ _| |_| |_| | ___    \n");
+    screenGotoxy(5, 4);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("|  _ \\ / _` | __| __| |/ _ \\   \n");
+    screenGotoxy(5, 5);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |_) | (_| | |_| |_| |  __/   \n");
+    screenGotoxy(5, 6);
+    screenSetColor(WHITE,LIGHTBLUE); 
+    printf("|____/ \\__,_|\\__|\\__|_|\\___    \n");                                                        
+    
 
+    screenGotoxy(10, 7);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("    _     ___    \n");
+    screenGotoxy(10, 8);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("  / _ \\  |  __|  \n");
+    screenGotoxy(10, 9);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" | | | | | |_    \n");
+    screenGotoxy(10, 10);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" | | | | |  _|   \n");
+    screenGotoxy(10, 11);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" | |_| | | |     \n");
+    screenGotoxy(10, 12);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("  \\ _ /  |_|     \n");
+
+    screenGotoxy(5, 13);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf(" _      _   _   ____   _  __   \n");
+    screenGotoxy(5, 14);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |    | | | | / ___| | |/ / \n");
+    screenGotoxy(5, 15);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |    | | | || |     | ' /      \n");
+    screenGotoxy(5, 16);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("| |___ | |_| || |___  | . \\     \n");
+    screenGotoxy(5, 17);
+    screenSetColor(WHITE,LIGHTBLUE);
+    printf("|_____| \\___/  \\____| |_|\\_\\    \n");
+
+    
 
     int opcao;
     scanf("%d", &opcao);
@@ -128,14 +167,17 @@ void verificacao_da_escolha(int opcao_user, Estatisticas *stats) {
 
     screenGotoxy(9, 10);
     if (opcao_user == opcao_computador) {
+        screenSetColor(YELLOW, WHITE);
         printf("EMPATE! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         stats->empates++;
     } else if ((opcao_user == 0 && opcao_computador == 2) || 
                (opcao_user == 1 && opcao_computador == 0) || 
                (opcao_user == 2 && opcao_computador == 1)) {
+        screenSetColor(GREEN, WHITE);
         printf("Você GANHOU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         stats->vitorias++;
     } else {
+        screenSetColor(RED, WHITE);
         printf("Você PERDEU! O computador escolheu %s e você escolheu %s\n", escolha_computador, escolha_user);
         stats->derrotas++;
     }
