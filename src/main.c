@@ -17,9 +17,6 @@ int escolha_opcao() {
     screenClear();
     screenInit(1);
 
-    // Define o fundo vermelho e o texto preto usando escape sequences ANSI
-    printf("\033[41m"); // Fundo vermelho
-    printf("\033[30m"); // Texto preto
 
     screenGotoxy(22, 5);
     printf("Escolha PEDRA[0], PAPEL[1] ou TESOURA[2]: ");
@@ -39,8 +36,6 @@ int escolha_opcao() {
     screenGotoxy(3, 14);
     printf("                       |___________|                    /    ");
 
-    // Reseta as cores para o padrão
-    printf("\033[0m");
 
     int opcao;
     scanf("%d", &opcao);
@@ -52,9 +47,7 @@ void verificacao_da_escolha(int opcao_user, Estatisticas *stats) {
     screenClear();
     screenInit(1);
 
-    // Define o fundo vermelho e o texto preto usando escape sequences ANSI
-    printf("\033[41m"); // Fundo vermelho
-    printf("\033[30m"); // Texto preto
+    
 
     char escolha_user[20];
     char escolha_computador[20];
@@ -81,17 +74,12 @@ void verificacao_da_escolha(int opcao_user, Estatisticas *stats) {
         stats->derrotas++;
     }
 
-    // Reseta as cores para o padrão
-    printf("\033[0m");
+    
 }
 
 void mostrar_resultados(Estatisticas *stats) {
     screenClear();
     screenInit(1);
-
-    // Define o fundo vermelho e o texto preto usando escape sequences ANSI
-    printf("\033[41m"); // Fundo vermelho
-    printf("\033[30m"); // Texto preto
 
     screenGotoxy(22, 8);
     printf("Você teve um total de:");
@@ -106,15 +94,13 @@ void mostrar_resultados(Estatisticas *stats) {
     printf("Pressione ENTER para sair...");
     getchar();
 
-    // Reseta as cores para o padrão
-    printf("\033[0m");
+    
 }
 
 int main() {
     screenInit(1);
     keyboardInit();
 
-    // Alocação dinâmica para a struct Estatisticas
     Estatisticas *stats = malloc(sizeof(Estatisticas));
     if (stats == NULL) {
         fprintf(stderr, "Erro ao alocar memória\n");
@@ -124,9 +110,7 @@ int main() {
     stats->derrotas = 0;
     stats->empates = 0;
 
-    // Define o fundo vermelho e o texto preto usando escape sequences ANSI
-    printf("\033[41m"); // Fundo vermelho
-    printf("\033[30m"); // Texto preto
+    
 
     screenGotoxy(20, 3);
     printf("| __ )  __ _| |_| |_| | ___    \n");
@@ -139,9 +123,36 @@ int main() {
     screenGotoxy(20, 7);
     printf("\n");
 
-    // Mensagem de boas-vindas ou introdução do jogo
-    screenGotoxy(3, 14);
+    screenGotoxy(27, 8);
+    printf("    _     ___    \n");
+    screenGotoxy(27, 9);
+    printf("  / _ \\  |  __|  \n");
+    screenGotoxy(27, 10);
+    printf(" | | | | | |_    \n");
+    screenGotoxy(27, 11);
+    printf(" | | | | |  _|   \n");
+    screenGotoxy(27, 12);
+    printf(" | |_| | | |     \n");
+    screenGotoxy(27, 13);
+    printf("  \\ _ /  |_|     \n");
+
+    screenGotoxy(20, 14);
+    printf(" _      _   _   ____   _  __  _   _ \n");
+    screenGotoxy(20, 15);
+    printf("| |    | | | | / ___| | |/ / | | | |\n");
+    screenGotoxy(20, 16);
+    printf("| |    | | | || |     | ' /   \\   /\n");
+    screenGotoxy(20, 17);
+    printf("| |___ | |_| || |___  | . \\    | | \n");
+    screenGotoxy(20, 18);
+    printf("|_____| \\___/  \\____| |_|\\_\\   |_| \n");
+
+
+
+    screenGotoxy(45, 21);
     printf("Bem-vindo ao BATTLE OF LUCK!\n\n");
+    screenGotoxy(45, 22);
+    printf("Pressione ENTER para continuar...");
     getchar();
 
     char opcao_sair;
@@ -157,8 +168,7 @@ int main() {
         screenClear();
         screenInit(1);
 
-        // Define o fundo vermelho novamente após limpeza
-        printf("\033[41m"); // Fundo vermelho
+        
         screenGotoxy(22, 12);
         printf("Deseja continuar? Sim[S] Não[N]: ");
         scanf(" %c", &opcao_sair);
@@ -167,14 +177,12 @@ int main() {
 
     mostrar_resultados(stats);
 
-    // Liberação da memória alocada para a struct
+    
     free(stats);
 
     keyboardDestroy();
     screenDestroy();
 
-    // Reseta as cores para o padrão antes de sair
-    printf("\033[0m");
 
     return 0;
 }
