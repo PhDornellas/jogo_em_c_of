@@ -126,41 +126,41 @@ void explicacao_jogo(){
 
     logo_Apresentacao(); 
 
-    screenGotoxy(33, 7);
+    screenGotoxy(36, 3);
     screenSetColor(CYAN, WHITE);
     printf("Bem-vindo ao BATTLE OF LUCK!\n\n");
 
     
-    screenGotoxy(33, 9);
+    screenGotoxy(42, 5);
     screenSetColor(DARKGRAY, WHITE);
     printf("Regras do jogo:\n");
 
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(33, 11);
+    screenGotoxy(33, 7);
     printf("1. Este é um jogo de Pedra, Papel ou Tesoura ");
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(36, 12);
+    screenGotoxy(36, 8);
     printf("em modo Melhor de 3.\n");
 
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(33, 13);
+    screenGotoxy(33, 10);
     printf("2. Pedra vence Tesoura, Tesoura vence Papel");
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(36,14);
+    screenGotoxy(36,11);
     printf("e Papel vence Pedra.");
 
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(33, 15);
+    screenGotoxy(33, 13);
     printf("3. Você jogará até um dos competidores");
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(36,16);
+    screenGotoxy(36,14);
     printf("vencer 3 rodadas.");
 
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(33, 17);
+    screenGotoxy(33, 16);
     printf("4. Se ambos escolherem a mesma opção, ");
     screenSetColor(DARKGRAY, WHITE);
-    screenGotoxy(36,18);
+    screenGotoxy(36,17);
     printf("será um empate e a rodada será repetida.");
 
     screenSetColor(DARKGRAY, WHITE);
@@ -170,7 +170,7 @@ void explicacao_jogo(){
     screenGotoxy(36,20);
     printf("alcançar 2 vitórias.");
 
-    screenGotoxy(36, 23);
+    screenGotoxy(36, 22);
     screenSetColor(CYAN, WHITE);
     printf("Pressione ENTER para começar o jogo!");
     
