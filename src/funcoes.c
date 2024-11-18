@@ -179,7 +179,7 @@ void explicacao_jogo(){
 
 
 
-int escolha_opcao()
+int escolha_opcao(int round)
 {
 
     screenClear();
@@ -188,6 +188,10 @@ int escolha_opcao()
     int opcao;
 
     logo_Apresentacao();
+
+    screenGotoxy(48, 6); 
+    screenSetColor(YELLOW, WHITE);
+    printf("Round %d", round);
 
     do
     {
@@ -271,6 +275,24 @@ void mostrar_resultados(Estatisticas *stats)
     printf("%d EMPATES", stats->empates);
 
     screenGotoxy(22, 16);
+    printf("Pressione ENTER para sair...");
+    getchar();
+}
+
+void mostrar_resultado_geral(int vitoria, int derrota)
+{
+
+    screenClear();
+    screenInit(1);
+
+    screenGotoxy(22, 8);
+    printf("Você teve um total de:");
+    screenGotoxy(22, 10);
+    printf("%d VITÓRIAS", vitoria);
+    screenGotoxy(22, 12);
+    printf("%d DERROTAS", derrota);
+    
+    screenGotoxy(22, 14);
     printf("Pressione ENTER para sair...");
     getchar();
 }

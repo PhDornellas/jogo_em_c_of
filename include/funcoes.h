@@ -5,12 +5,11 @@
 #include "keyboard.h"
 #include "timer.h"
 
-typedef struct
-{
+struct estatisticas{
     int vitorias;
     int derrotas;
     int empates;
-} Estatisticas;
+} typedef Estatisticas;
 
 void logo_entrada();
 void logo_Apresentacao();
@@ -18,5 +17,7 @@ void explicacao_jogo();
 int escolha_opcao();
 void verificacao_da_escolha(int opcao_user, Estatisticas *stats);
 void mostrar_resultados(Estatisticas *stats);
+void mostrar_resultado_geral(int vitoria, int derrota);
+
 
 #endif // FUNCOES_H
