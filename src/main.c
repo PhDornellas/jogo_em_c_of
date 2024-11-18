@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
 #include "screen.h"
 #include "keyboard.h"
 #include "timer.h"
 #include "funcoes.h"
-
-
+#include "manipulacao_txt.h"
 
 int main() {
     screenInit(1);
@@ -18,7 +16,6 @@ int main() {
         fprintf(stderr, "Erro ao alocar memória\n");
         return 1;
     }
-    
 
     logo_entrada();
     explicacao_jogo();
@@ -26,17 +23,16 @@ int main() {
     int vitoria_geral = 0;
     int derrota_geral = 0;
     char opcao_sair;
-    
 
     do {
         int round = 1;
         stats->vitorias = 0;
         stats->derrotas = 0;
         stats->empates = 0;
-        do
-        {
+
+        do {
             int opcao_user = escolha_opcao(round);
-            round = round +1;
+            round++;
             verificacao_da_escolha(opcao_user, stats);
 
             screenGotoxy(22, 12);
@@ -46,36 +42,46 @@ int main() {
 
             screenClear();
             screenInit(1);
-
         } while (stats->vitorias < 3 && stats->derrotas < 3);
 
         mostrar_resultados(stats);
-        if(stats->vitorias == 3){
-            vitoria_geral= vitoria_geral + 1;
+        if (stats->vitorias == 3) {
+            vitoria_geral++;
+        } else if (stats->derrotas == 3) {
+            derrota_geral++;
         }
 
-        else if (stats->derrotas == 3){
-            derrota_geral = derrota_geral + 1;
-        }
-        
-        
         screenClear();
         screenInit(1);
-        screenGotoxy(22, 12);
-        printf("Deseja Jogar outra ? Sim[S] Não[N]: ");
+
+        logo_Apresentacao(); 
+        screenGotoxy(36, 12);
+        printf("Deseja jogar outra? Sim[S] Não[N]: ");
         scanf(" %c", &opcao_sair);
 
     } while (opcao_sair == 'S' || opcao_sair == 's');
 
-    mostrar_resultado_geral(vitoria_geral, derrota_geral);
+   
+    char nome_jogador[50];
+    screenClear();
+    screenInit(1);
+
+    logo_Apresentacao(); 
+    screenGotoxy(36, 10);
+    printf("Digite seu nome para salvar no ranking: ");
+    getchar();  
+    fgets(nome_jogador, sizeof(nome_jogador), stdin);
 
     
+    nome_jogador[strcspn(nome_jogador, "\n")] = '\0';
+
+    salvar_ranking(nome_jogador, vitoria_geral);
+    exibir_ranking();
+
     free(stats);
 
     keyboardDestroy();
     screenDestroy();
 
-
     return 0;
 }
-
