@@ -64,7 +64,7 @@ void exibir_ranking() {
     Registro registros[100]; 
     int total = 0;
 
-    // Ler os registros do arquivo
+    
     while (fscanf(arquivo, "%49[^:]:%d\n", registros[total].nome, &registros[total].vitorias) != EOF) {
         total++;
     }

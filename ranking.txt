@@ -5,3 +5,4 @@ Jogador: Pedro - Vitórias: 4
 Jogador: Lercio - Vitórias: 1
 
 Jogador: runa - Vitórias: 1
+Jogador: aka - Vitórias: 2
