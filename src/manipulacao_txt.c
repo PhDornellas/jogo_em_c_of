@@ -32,7 +32,7 @@ void exibir_ranking() {
     int total = 0;
 
     
-    while (fscanf(arquivo, "%49[^:]:%d\n", registros[total].nome, &registros[total].vitorias) != EOF) {
+    while (total < 100 && fscanf(arquivo, "Jogador: %49[^-] - Vitórias: %d\n", registros[total].nome, &registros[total].vitorias) == 2) {
         total++;
     }
 
@@ -53,7 +53,7 @@ void exibir_ranking() {
     printf("===== RANKING - TOP 5 =====");
     for (int i = 0; i < total && i < 5; i++) {
         screenGotoxy(20, m);
-        printf("%d. %s - %d vitórias\n", i + 1, registros[i].nome, registros[i].vitorias);
+        printf("%d. Jogador: %s - Vitórias: %d", i + 1, registros[i].nome, registros[i].vitorias);
         m++;
     }
 

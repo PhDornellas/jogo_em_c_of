@@ -68,8 +68,7 @@ int main() {
 
     logo_Apresentacao(); 
     screenGotoxy(36, 10);
-    printf("Digite seu nome para salvar no ranking: ");
-    getchar();  
+    printf("Digite seu nome para salvar no ranking: ");  
     fgets(nome_jogador, sizeof(nome_jogador), stdin);
 
     

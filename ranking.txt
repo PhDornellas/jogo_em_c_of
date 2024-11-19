@@ -8,6 +8,12 @@ Jogador: Kaka - Vitórias: 2
 Jogador: Gabriel - Vitórias: 0
 Jogador: Angelo - Vitórias: 5
 Jogador: ana - Vitórias: 3
-Jogador: Gabriel M - Vitórias: 1
+Jogador: Marcelo - Vitórias: 1
 Jogador: Prata - Vitórias: 1
-Jogador: vinicius - Vitórias: 0
+Jogador: Vinicius - Vitórias: 0
+Jogador: Joca - Vitórias: 0
+Jogador: Henrique - Vitórias: 0
+Jogador: Bruno - Vitórias: 1
+Jogador: Igor - Vitórias: 0
+Jogador: Jorge - Vitórias: 1
+Jogador: Dornellas - Vitórias: 6
