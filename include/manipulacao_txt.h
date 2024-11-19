@@ -11,9 +11,6 @@
 } typedef Registro;
 
 
-void escrever_no_arquivo(const char *nome_arquivo, const char *conteudo);
-void ler_arquivo(const char *nome_arquivo);
-void adicionar_no_arquivo(const char *nome_arquivo, const char *conteudo);
 void salvar_ranking(const char *nome_jogador, int vitoria_geral);
 void exibir_ranking();
 

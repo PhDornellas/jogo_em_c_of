@@ -3,6 +3,11 @@ Jogador: Taciana - Vitórias: 2
 Jogador: Lucas - Vitórias: 1
 Jogador: Pedro - Vitórias: 4
 Jogador: Lercio - Vitórias: 1
-
-Jogador: runa - Vitórias: 1
-Jogador: aka - Vitórias: 2
+Jogador: Bruna - Vitórias: 4
+Jogador: Kaka - Vitórias: 2
+Jogador: Gabriel - Vitórias: 0
+Jogador: Angelo - Vitórias: 5
+Jogador: ana - Vitórias: 3
+Jogador: Gabriel M - Vitórias: 1
+Jogador: Prata - Vitórias: 1
+Jogador: vinicius - Vitórias: 0

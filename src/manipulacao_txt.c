@@ -5,39 +5,6 @@
 #include <time.h>
 #include "manipulacao_txt.h"
 
-void escrever_no_arquivo(const char *nome_arquivo, const char *conteudo) {
-    FILE *arquivo = fopen(nome_arquivo, "w"); 
-    if (arquivo == NULL) {
-        printf("Erro ao abrir o arquivo para escrita.\n");
-        return;
-    }
-    fprintf(arquivo, "%s", conteudo); 
-    fclose(arquivo); 
-}
-
-void ler_arquivo(const char *nome_arquivo) {
-    FILE *arquivo = fopen(nome_arquivo, "r"); 
-    if (arquivo == NULL) {
-        printf("Erro ao abrir o arquivo para leitura.\n");
-        return;
-    }
-    char ch;
-    while ((ch = fgetc(arquivo)) != EOF) { 
-        putchar(ch); 
-    }
-    fclose(arquivo);
-}
-
-void adicionar_no_arquivo(const char *nome_arquivo, const char *conteudo) {
-    FILE *arquivo = fopen(nome_arquivo, "a"); 
-    if (arquivo == NULL) {
-        printf("Erro ao abrir o arquivo para adicionar conteúdo.\n");
-        return;
-    }
-    fprintf(arquivo, "%s", conteudo); 
-    fclose(arquivo); 
-}
-
 void salvar_ranking(const char *nome_jogador, int vitoria_geral) {
     FILE *arquivo = fopen("ranking.txt", "a"); 
     if (arquivo == NULL) {
